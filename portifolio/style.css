@@ -1,0 +1,418 @@
+/* GERAL */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black; 
+    color: white; 
+}
+body {
+    overflow-x: hidden;  /* Oculta a barra horizontal */
+  }
+  
+html {
+    scroll-behavior: smooth; 
+    
+        scroll-padding-top: 100px; /* ajuste conforme a altura do header */
+      
+}
+
+/* CABEÇALHO */
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; 
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 1000; 
+}
+
+/* LOGO */
+.logo {
+    grid-column: 1;
+}
+.logo img {
+    height: 60px; 
+    object-fit: contain;
+    display: block;
+}
+
+/* MENU DE NAVEGAÇÃO */
+nav {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    gap: 80px; 
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    color: white; 
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #000000; 
+}
+
+/* HOME (PÁGINA INICIAL) */
+.home {
+    position: relative;
+    height: 100vh; 
+    background: url(img/download.jpeg) no-repeat center center; 
+    background-size: cover;
+    display: flex;
+    align-items: flex-start; 
+    padding: 60px 160px;
+    color: white;
+    overflow: hidden;
+}
+
+/* CAMADA ESCURA POR CIMA DA IMAGEM */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    z-index: 1;
+}
+
+/* CAIXA DE TEXTO  HOME */
+.home-box {
+    position: relative;
+    z-index: 2; 
+    max-width: 490px;
+    padding: 20px;
+    margin-top: 20px; 
+    margin-left: 70px; 
+}
+.home-box h1 {
+    font-size: 4.5rem;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 20px;
+    
+}
+.home-box p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+/* BIOGRAFIA */
+.biografia .fundo {
+    padding-top: 100px; 
+    background-image: url('img/foto_biografia.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    position: relative;
+}
+.biografia .fundo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.6); 
+    z-index: 1;
+}
+.conteudo-biografia {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+.conteudo-biografia h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.conteudo-biografia p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+/*CARROSEL*/
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+/*FOTO FILHO*/
+.filho-container {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#fotoFilho {
+  width: 300px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 2s ease;
+  border-radius: 10px;
+}
+
+.texto-filho {
+  font-size: 1.5em;
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 2s ease;
+
+}
+.anima-foto {
+  text-align: center;
+  padding: 20px;
+}
+.foto {
+  width: 280px;
+  max-width: 90%;
+  border-radius: 15px;
+  animation: flutuar 4s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+/* SEÇÃO DE MÚSICAS */
+.musicas {
+    height: 120vh; 
+    background-color: #000;
+    color: white;
+    padding: 80px 40px;
+    overflow: hidden;
+  }
+  
+  .musicas h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .scroll-musicas {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    scrollbar-width: none; 
+  }
+  
+  .scroll-musicas::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .musica-card {
+    position: relative;
+    min-width: 250px;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  }
+  
+  .musica-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+  }
+  
+  .musica-card:hover img {
+    filter: brightness(0.5);
+  }
+  
+  .musica-card .info {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    z-index: 2;
+    color: white;
+  }
+  
+  .musica-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 10px;
+    font-weight: bold;
+  }
+  
+  .musica-card a {
+    background-color: #ecf1ee;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+  
+  .musica-card a:hover {
+    background-color: #fbfdfc;
+  }
+
+
+  /*CONTATO8*/
+  .contatos {
+    background-color: black;
+    color: white;
+    padding: 60px 20px 120px; /* topo, lados, fundo — mais espaço no fim */
+    min-height: 100vh;         /* ocupa a tela toda */
+    box-sizing: border-box;    /* inclui padding no cálculo da altura */
+}
+  
+  .criadoras {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+
+    flex-wrap: wrap;
+  }
+  
+  .criadora {
+    text-align: center;
+    width: 160px;
+    padding: 10px;
+  }
+  
+  .criadora img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid white;
+  }
+  
+  .criadora h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .criadora p {
+    font-size: 0.85rem;
+    margin: 2px 0;
+  }
+  .redes-sociais {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #000;
+    color: white;
+  }
+    .icones-redes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .icones-redes img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+  }
+  
+  .icones-redes img:hover {
+    transform: scale(1.2);
+  }
+  
+  
+  .rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 999;
+  }
+  
+  .form-section {
+    background-color: #111;
+    color: #fff;
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  .form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input, textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #7a797a;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #7a7979;
+  }
+   
+  
+  
